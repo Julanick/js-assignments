@@ -455,9 +455,9 @@ function toStringList(arr) {
  */
 function sortCitiesArray(arr) {
    var cmp = (a, b) => (a > b) - (a < b);
-   return arr.sort(function(a, b) { 
-      return cmp(a.country,b.country) || cmp(a.city,b.city)
-  })
+   return arr.sort(function (a, b) {
+      return cmp(a.country, b.country) || cmp(a.city, b.city)
+   })
 }
 
 /**
@@ -496,7 +496,10 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-   throw new Error('Not implemented');
+   var arr = new Array(end - start + 1);
+   return arr.fill(null).map(function () {
+      return start++;
+   })
 }
 
 /**
@@ -511,7 +514,9 @@ function getIntervalArray(start, end) {
  *   [ 1, 1, 2, 2, 3, 3, 4, 4] => [ 1, 2, 3, 4]
  */
 function distinct(arr) {
-   throw new Error('Not implemented');
+   return arr.filter(function (v,i,s) {
+      return s.indexOf(v) === i;
+   });
 }
 
 /**

@@ -47,7 +47,18 @@ function* get99BottlesOfBeer() {
  *
  */
 function* getFibonacciSequence() {
-    throw new Error('Not implemented');
+    var func1 = 1;
+    var func2 = 0;
+    while (true) {
+        var current = func2;
+        func2 = func1;
+        func1 = func1 + current;
+        var reset = yield current;
+        if (reset) {
+            func1 = 1;
+            func2 = 1;
+        }
+    }
 }
 
 
